@@ -21,6 +21,7 @@ function mixStrings(s1, s2) {
 
   var result = '';
   if (isNonEmptyString(s1) && isNonEmptyString(s2)) {
+    // Assuming they have the same length
     for (var i = 0; i < s1.length; i++) {
       result += s1[i] + s2[i];
     }
