@@ -22,7 +22,7 @@ var expectations = [
 ];
 
 function print(str) {
-  return (str === '') ? "''" : str;
+  return (typeof str === 'string') ? ("'" + str + "'") : str;
 }
 function createSpec(expectation) {
   var e = expectation;
