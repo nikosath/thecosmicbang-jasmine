@@ -20,21 +20,16 @@ beforeAll(function () {
 describe('mixStrings', function () {
   it('should be the name of a function', function () {
     expect(mixStrings).toBeFunction();
-    // Alternative
+    // Alternative to the toBeFunction matcher
     // expect(typeof mixStrings).toBe('function');
   });
 
-  it('should take two string arguments', function () {
-    expect(mixStrings).toThrowError(ArgumentError);
+  it('should take two arguments',
+  function () {
+    expect(mixStrings).toThrowError(ArgumentError, 'Expected two arguments');
     expect(function () {
       mixStrings('str1');
-    }).toThrowError(ArgumentError);
-    expect(function () {
-      mixStrings(1, 'str2');
-    }).toThrowError(ArgumentError);
-    expect(function () {
-      mixStrings('str1', 2);
-    }).toThrowError(ArgumentError);
+    }).toThrowError(ArgumentError, 'Expected two arguments');
   });
 
   it('should mix its arguments and return the mixed string', function () {
@@ -43,7 +38,7 @@ describe('mixStrings', function () {
     expect(mixStrings('d!g4S', 'F4ms5')).toBe('dF!4gm4sS5');
   });
 
-  // TODO: Add nesting
+  // TODO: Is nesting worth it in this case?
   it('should handle cases where one or both arguments, are "", null or undefined',
     function () {
       // First string empty "" or null or undefined and second string non-empty.
