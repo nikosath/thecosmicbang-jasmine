@@ -24,9 +24,9 @@ function mixStrings(s1, s2) {
     for (var i = 0; i < s1.length; i++) {
       result += s1[i] + s2[i];
     }
-  } else if (isNonEmptyString(s1) && !isNonEmptyString(s2)) {
+  } else if (isNonEmptyString(s1)) {
     result = s1;
-  } else if (!isNonEmptyString(s1) && isNonEmptyString(s2)) {
+  } else if (isNonEmptyString(s2)) {
     result = s2;
   }
 
