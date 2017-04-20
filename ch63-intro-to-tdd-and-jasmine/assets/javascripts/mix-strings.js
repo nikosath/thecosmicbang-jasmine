@@ -1,11 +1,3 @@
-function ArgumentError(message) {
-  this.name = 'ArgumentError';
-  this.message = (message !== undefined) ? message : 'Argument Error';
-  this.stack = (new Error()).stack;
-}
-ArgumentError.prototype = Object.create(Error.prototype);
-ArgumentError.prototype.constructor = ArgumentError;
-
 function isNonEmptyString(s) {
   if (typeof s !== 'string' || s === '') {
     return false;
@@ -15,10 +7,6 @@ function isNonEmptyString(s) {
 }
 
 function mixStrings(s1, s2) {
-  if (arguments.length < 2) {
-    throw new ArgumentError('Expected two arguments');
-  }
-
   var result = '';
   if (isNonEmptyString(s1) && isNonEmptyString(s2)) {
     // Assuming they have the same length
