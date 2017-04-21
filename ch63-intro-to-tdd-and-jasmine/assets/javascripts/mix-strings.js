@@ -19,7 +19,7 @@ function mixStrings(s1, s2) {
     result = s1;
   } else if (isS2NonEmptyString) {
     result = s2;
-  }
+  } // else, in case both conditions are false, `result` stays ''
 
   return result;
 }
