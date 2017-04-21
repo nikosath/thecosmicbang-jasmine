@@ -1,9 +1,8 @@
 function isValidString(s) {
   if (typeof s !== 'string' || s === '') {
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
 
 function mixStrings(s1, s2) {
