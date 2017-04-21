@@ -21,14 +21,14 @@ var expectations = [
   {str1: undefined, str2: undefined, result: ''}
 ];
 
-function print(str) {
+function quote(str) {
   return (typeof str === 'string') ? ("'" + str + "'") : str;
 }
 function createSpec(expectation) {
   var e = expectation;
-  describe("when first string is " + print(e.str1), function () {
-    describe("and second string is " + print(e.str2), function () {
-      it('returns ' + print(e.result), function () {
+  describe("when first string is " + quote(e.str1), function () {
+    describe("and second string is " + quote(e.str2), function () {
+      it('returns ' + quote(e.result), function () {
         expect(mixStrings(e.str1, e.str2)).toBe(e.result);
       });
     });
